@@ -1,0 +1,43 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.example.grpc.server.grpcserver.estate;
+
+message ProtoEstate {
+    string district = 1;
+    string address = 2;
+    string building = 3;
+    string rooms = 4;
+    int32 price = 5;
+}
+
+message DeleteRequest {
+	string estate_id = 1;
+    string payment_id = 2;
+}
+
+message DeleteResponse {
+    string report = 1;
+}
+
+message GetRequest {
+}
+
+message GetResponse {
+    repeated ProtoEstate estates = 1;
+}
+
+message CreateRequest {
+	ProtoEstate estate = 1;
+}
+
+message CreateResponse {
+    string id = 1;
+}
+
+service EstateService {
+    rpc get(GetRequest) returns (GetResponse);
+    rpc delete(DeleteRequest) returns (DeleteResponse);
+    rpc create(CreateRequest) returns (CreateResponse);
+}
+
+
