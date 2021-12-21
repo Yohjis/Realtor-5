@@ -6,12 +6,12 @@ public final class Payment {
 
     private String id;
     private int desk;
-    private int hookahBalance;
+    private int realtorBalance;
 
     public Payment(int desk, int hookahBalance) {
         this.id = UUID.randomUUID().toString();
         this.desk = desk;
-        this.hookahBalance = hookahBalance;
+        this.realtorBalance = realtorBalance;
     }
 
     public Payment() {
@@ -30,15 +30,15 @@ public final class Payment {
         return desk;
     }
 
-    public void setHookahBalance(int hookahBalance) {
-        this.hookahBalance = hookahBalance;
+    public void setRealtorhBalance(int RealtorBalance) {
+        this.realtorBalance = realtorBalance;
         System.out.println(
-                "Hookah place balance: " + hookahBalance + "\nPayment id: " + id + "\nPayment desk number: " + desk);
+                "Realtor place balance: " + realtorBalance + "\nPayment id: " + id + "\nPayment desk number: " + desk);
     }
 
     @Override
     public String toString() {
-        return "Desk number: " + desk + ". Money balance: " + hookahBalance + ". Desk id: " + id;
+        return "Desk number: " + desk + ". Money balance: " + realtorBalance + ". Desk id: " + id;
     }
 
 }
